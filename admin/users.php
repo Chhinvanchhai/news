@@ -63,7 +63,7 @@ session_start();
                                         "<td>".$row["username"]."</td>".
                                         "<td>".$row["email"]."</td>".
                                         "<td>".$row["type"]."</td>".
-                                        '<td><img style="width:80px" src="uploads/'.$row["image"].'"></td>'.
+                                        '<td><img style="height:40px" src="uploads/'.$row["image"].'"></td>'.
                                         '<td style="width:20%"> <button name="btn_update" class="btn btn-success btn_select" data-id="'.$row["id"].'"  data-image="'.$row["image"].'"  data-name="'.$row["username"].'" data-password="'.$row["password"].'">Edit</button>  <button  data-toggle="modal" data-target="#deletModal" class=" btn btn-delete btn-danger"  data-id ="'.$row['id'].'">Delete</button></td>'.
                                     "</tr>";
                             }

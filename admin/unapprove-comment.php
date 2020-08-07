@@ -35,19 +35,14 @@ if($_GET['action']=='del' && $_GET['rid'])
 <?php include('includes/header.php');?>
 
     <body class="fixed-left">
-
         <!-- Begin page -->
         <div id="wrapper">
-
             <!-- Top Bar Start -->
-<?php include('includes/topheader.php');?>
+        <?php include('includes/topheader.php');?>
 
             <!-- ========== Left Sidebar Start ========== -->
-<?php include('includes/leftsidebar.php');?>
+        <?php include('includes/leftsidebar.php');?>
             <!-- Left Sidebar End -->
-
-
-
             <!-- ============================================================== -->
             <!-- Start right Content here -->
             <!-- ============================================================== -->
@@ -55,8 +50,6 @@ if($_GET['action']=='del' && $_GET['rid'])
                 <!-- Start content -->
                 <div class="content">
                     <div class="container">
-
-
                         <div class="row">
 							<div class="col-xs-12">
 								<div class="page-title-box">
