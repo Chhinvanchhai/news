@@ -22,3 +22,26 @@
 .dashboard  div i{
     font-size: 40px;
 }
+ul{
+    list-style-type:none;
+}
+li {
+    list-style: none;
+    padding: 10px;
+}
+.icon-size{
+    padding: 5px 5px 5px 5px;
+    font-weight: 400;
+}
+.block-pf{
+    text-align: center !important;
+    padding: 15px;
+}
+.bg-pf{
+    background-color:#5c4fad  ;
+}
+.pf-name{
+    line-height: 1px;
+    font-size: 10px;
+    vertical-align: middle;
+}
