@@ -15,7 +15,7 @@ session_start();
             <?php include('includes/leftsidebar.php');?>
             <div class="content-page">
                 <!-- Start content -->
-                <div class="content">
+                <div class="content" style="background-color: #e6e6e6;">
                     <div class="container-fluid p-4">
                         <div class="row">
 							<div class="col-xs-12">
