@@ -33,7 +33,7 @@
             </ul>
             <div class="nav nav-item hidden-sm-up" style="height:70px; float: right;">
                <ul>
-                  <li class="dropdown user-box">
+                  <li class="dropdown user-box" style="line-height: 50px;">
                      <a href="" class="dropdown-toggle waves-effect user-link" data-toggle="dropdown" aria-expanded="true" style="margin-top:-10px;">
                      <img src="assets/images/usericon.png" alt="user-img" class="img-circle user-img">
                      </a>
@@ -43,7 +43,7 @@
                         </span>
                         <div class="d-flex no-block align-items-center p-15 bg-pf text-white m-b-10" style="height: 100px;width: 248px;">
                            <li class="block-pf"> 
-                           <img src="assets/images/usericon.png" alt="user-img" class="img-circle user-img">
+                           	<img src="assets/images/usericon.png" alt="user-img" class="img-circle user-img">
                            </li>
                            <div class="m-l-10 pf-name">
                            <h4 class="m-b-0">Steave Jobs</h4>
@@ -58,9 +58,21 @@
                   </li>
                </ul>
                <ul class="nav" style="height:70px;">
-                  <li class="nav-item right-side-toggle" style="font-size:18px; ">
-                     <a class="nav-link  waves-effect waves-light" href="javascript:void(0)"><i class="ti-settings"></i></a>
-                  </li>
+			   		<div id="main">
+						<li class="nav-link right-side-toggle">
+							<!-- <a class="nav-link  waves-effect waves-light" href="javascript:void(0)"><i class="ti-settings"></i></a> -->
+							<a class="nav-link  waves-effect waves-light" href="javascript:void(0)"><button onclick="openNav()" style="border: none;font-size: 22px;box-shadow: none;background-color: #fff; line-height: 50px;"><i class="ti-settings"></i></button> </a>
+						</li>
+						
+							<div id="mySidebar" class="sidebar" style="padding-top: 0px;">
+								
+								<div class="rpanel-title">Service parnel <span><a href="javascript:void(0)" class="closebtnn" onclick="closeNav()" >×</a></span></div>
+								<a href="#">Services</a>
+								<a href="#">Clients</a>
+								<a href="#">Contact</a>
+							</div>
+					</div>
+         
                </ul>
             </div>
             
@@ -69,3 +81,14 @@
       </div>
    </div>
 </div>
+<!-- <script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script> -->

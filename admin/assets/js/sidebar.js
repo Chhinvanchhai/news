@@ -295,6 +295,17 @@ function toggle_slimscroll(item){
     }
 }
 
+// right sidebar
+function openNav() {
+  document.getElementById("mySidebar").style.width = "240px";
+  document.getElementById("main").style.marginRight = "0px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+
 
 // === following js will activate the menu in left side bar based on url ====
 $(document).ready(function() {
@@ -308,3 +319,4 @@ $(document).ready(function() {
         }
     });
 });
+
