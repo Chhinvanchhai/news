@@ -40,7 +40,7 @@
         }
         if(!$(this).hasClass("subdrop")) {
           // hide any open menus and remove all other classes`
-          console.log($(this).hasClass("subdrop"));
+          // console.log($(this).hasClass("subdrop"));
           $("ul",$(this).parents("ul:first")).slideUp(350);
           $("a",$(this).parents("ul:first")).removeClass("subdrop");
           $("#sidebar-menu .pull-right i").removeClass("md-remove").addClass("md-add");

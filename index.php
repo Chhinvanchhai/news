@@ -34,8 +34,6 @@
                       }
                       $no_of_records_per_page = 8;
                       $offset = ($pageno-1) * $no_of_records_per_page;
-                    
-                    
                       $total_pages_sql = "SELECT COUNT(*) FROM tblposts";
                       $result = mysqli_query($con,$total_pages_sql);
                       $total_rows = mysqli_fetch_array($result)[0];
@@ -52,6 +50,7 @@
                         <div class="card-body">
                           <h4 class="card-title"><?php echo htmlentities($row['posttitle']);?></h4>
                           <p><b>Category : </b> <a href="category.php?catid=<?php echo htmlentities($row['cid'])?>"><?php echo htmlentities($row['category']);?></a> </p>
+                          <p></p>
                         </div>
                         <div class="card-footer text-muted">
                           Posted on <?php echo htmlentities($row['postingdate']);?>
