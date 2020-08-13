@@ -22,13 +22,7 @@
 .dashboard  div i{
     font-size: 40px;
 }
-ul{
-    list-style-type:none;
-}
-li {
-    list-style: none;
-    padding: 10px;
-}
+
 .icon-size{
     padding: 5px 5px 5px 5px;
     font-weight: 400;
@@ -116,3 +110,122 @@ li {
     right: 25px;
     font-size: 26px;
   }
+  .icon-size{
+    font-size: 20px;
+    line-height: 50px;
+  }
+  
+  /*---------------------- block search ----------------------*/
+
+  .overlay {
+    height: auto;
+    width: 83%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 246, 246);
+    background-color: rgb(255, 246, 246);
+    overflow-y: hidden;
+    transition: 0.5s;
+  }
+  
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 80%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+	transition: 0.3s;
+	height: 70px;
+  }
+  
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    /* .overlay {overflow-y: auto;} */
+    .overlay a {font-size: 12px}
+    .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    /* right: 35px; */
+    }
+  }
+  .bl-search {
+    width: 80%;
+    padding: 20px 40px 20px 20px;
+    border-radius: 0;
+    font-size: 12px;
+    transition: .5s ease-in;
+    height: 68px;
+  }
+  .search-bk{
+	 background-color: #fff;
+	 line-height: 48px;
+
+  }
+  .search-box{
+    left: 225px;
+    width: calc(100% - 60px);
+
+  }
+  .bntcloseSearch{
+	position: absolute;
+    top: 0;
+    right: 10px;
+	font-size: 26px;
+	line-height: 50px;
+  }
+  .footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 40px;
+	background-color: red;
+	color: white;
+	text-align: center;
+	line-height: 40px;
+ }
+.card-group{
+	display: flex;
+	flex-flow: row wrap;
+  width: 80%;
+  margin: 0 auto;
+}
+.page-titles {
+    padding: 14px 10px;
+	margin: 15px -20px 15px -20px;
+}
+.row{
+	display: flex;
+    flex-wrap: wrap;
+    margin-right: -10px;
+    margin-left: -10px;
+}
+.align-items-center {
+    align-items: center!important;
+}
+.justify-content-end {
+	justify-content: flex-end!important;
+}
+.d-flex {
+	display: flex!important;
+}

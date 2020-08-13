@@ -18,8 +18,8 @@
             <div class="navbar-header" style="line-height: 65px; min-width: 70px;border-right: 1px solid rgba(0,0,0,.1);">
                <div class="" role="navigation">
                <ul class="nav navbar-nav navbar-left">
-                  <li style="height: 70px;">
-                     <button class="button-menu-mobile open-left waves-effect" style="margin-top: -15px; padding: 0 px 0px; line-height: 50px;">
+                  <li style="height: 70px; line-height: 58px; padding: 10px;">
+                     <button class="open-left waves-effect waves-ligh" style="line-height: 29px; border: none; font-size: 29px; background-color: #fff;">
                         <i class="mdi mdi-menu"></i>
                      </button>
                   </li>
@@ -28,11 +28,8 @@
             </div>
          <!-- Right(Notification) -->
         <div class="navbar-collapse">
-            <ul class="nav navbar-nav mr-auto">
-               <li></li>
-            </ul>
             <div class="nav nav-item hidden-sm-up" style="height:70px; float: right;">
-               <ul>
+               <ul style=" list-style: none; padding: 10px;">
                   <li class="dropdown user-box" style="line-height: 50px;">
                      <a href="" class="dropdown-toggle waves-effect user-link" data-toggle="dropdown" aria-expanded="true" style="margin-top:-10px;">
                      <img src="assets/images/usericon.png" alt="user-img" class="img-circle user-img">
@@ -59,9 +56,9 @@
                </ul>
                <ul class="nav" style="height:70px;">
 			   		<div id="main">
-						<li class="nav-link right-side-toggle">
+						<li class="right-side-toggle">
 							<!-- <a class="nav-link  waves-effect waves-light" href="javascript:void(0)"><i class="ti-settings"></i></a> -->
-							<a class="nav-link  waves-effect waves-light" href="javascript:void(0)"><button onclick="openNav()" style="border: none;font-size: 22px;box-shadow: none;background-color: #fff; line-height: 50px;"><i class="ti-settings"></i></button> </a>
+							<a class="nav-link waves-effect waves-light" href="javascript:void(0)"><button onclick="openNav()" style="border: none;font-size: 20px;box-shadow: none;background-color: #fff; line-height: 48px;"><i class="ti-bell"></i></button> </a>
 						</li>
 						
 							<div id="mySidebar" class="sidebar" style="padding-top: 0px;">
@@ -81,14 +78,3 @@
       </div>
    </div>
 </div>
-<!-- <script>
-function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-}
-
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
-}
-</script> -->

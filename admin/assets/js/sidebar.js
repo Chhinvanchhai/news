@@ -302,11 +302,9 @@ function openNav() {
 }
 
 function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
+  document.getElementById("mySidebar").style.width = "0px";
+  document.getElementById("main").style.marginLeft= "0px";
 }
-
-
 // === following js will activate the menu in left side bar based on url ====
 $(document).ready(function() {
     $("#sidebar-menu a").each(function() {
