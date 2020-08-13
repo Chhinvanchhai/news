@@ -6,9 +6,15 @@
                 <li>
                     <a href="dashboard.php" class="waves-effect"><i class="mdi mdi-view-dashboard"></i> <span> Dashboard </span> </a>
                 </li>
-                <li>
-                    <a href="users.php" class="waves-effect"><i class="fa fa-user"></i> <span> Users </span> </a>
-                </li>
+                <?php
+                    if($_SESSION['type'] == "admin"){
+                        echo '
+                        <li>
+                          <a href="users.php" class="waves-effect"><i class="fa fa-user"></i> <span> Users </span> </a>
+                        </li>
+                        ';
+                    }
+                ?>
                 <li>
                     <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-pie-chart"></i> <span> Category </span> <span class="menu-arrow"></span></a>
                         <ul>

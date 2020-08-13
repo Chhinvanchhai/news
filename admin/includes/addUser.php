@@ -13,7 +13,7 @@
                     </div>';
                 echo '<script type="text/javascript">
                             setTimeout(function(){
-                                window.location.href="add_user.php";
+                                window.location.href="users.php";
                             },1000);
                      </script>';
             }
@@ -31,7 +31,8 @@
                 move_uploaded_file( $c_image_temp , "uploads/$newname");
                 $name = $_REQUEST['username'];
                 $password = $_REQUEST['password'];
-                $insert = $db::query("insert into users(username,password,image) values('".$name."',".$password.",'".$newname."')");
+                $type = $_REQUEST['type'];
+                $insert = $db::query("insert into users(username,password,type,image) values('".$name."',".$password.",'$type','".$newname."')");
                 if($insert == true){
                     $result = $db::query('SELECT *FROM users');
                     echo '  <div class="alert alert-success alert_message" role="alert">
@@ -51,10 +52,11 @@
                 $name = $_REQUEST['username'];
                 $password = $_REQUEST['password'];
                 $image= $_FILES['image']['name'];
+                $type = $_REQUEST['type'];
                 $update_id = $_REQUEST['update_id'];
                 if(empty($image)){
                     
-                    $update = $db::query("UPDATE users set username = '".$name."',password = '".$password."'  WHERE id = ".$update_id."");
+                    $update = $db::query("UPDATE users set username = '".$name."',password = '".$password."',type = '".$type."'  WHERE id = ".$update_id."");
                     if($update == true){
                         $result = $db::query('SELECT *FROM users');
                         echo '  <div class="alert alert-success alert_message" role="alert">

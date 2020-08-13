@@ -8,15 +8,16 @@
     {
         $uname=$_POST['username'];
         $password=$_POST['password'];
-        $sql =mysqli_query($con,"SELECT username,email,password FROM users WHERE (username='$uname' || email='$uname')");
+        $sql =mysqli_query($con,"SELECT username,email,password,type FROM users WHERE (username='$uname' || email='$uname')");
         $num=mysqli_fetch_array($sql);
         if($num>0)
         {
             $hashpassword=$num['password']; // Hashed password fething from database
-        //verifying Password
-        // if (password_verify($password, $hashpassword)) {
-            if(!empty($num)){
+            //verifying Password
+            // if (password_verify($password, $hashpassword)) {
+            if( $num['password'] == $password){
                 $_SESSION['login']=$_POST['username'];
+                $_SESSION['type'] = $num['type'];
                 echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
             } else {
                 echo "<script>alert('Wrong Password');</script>";
@@ -27,7 +28,6 @@
         }
     }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <?php include('includes/header.php');?>

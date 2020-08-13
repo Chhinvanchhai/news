@@ -32,6 +32,13 @@
                               <input type="text" class="form-control" class="password" id="password" placeholder="password" name="password" required>
                            </div>
                            <div class="form-group">
+                              <label>Type:</label>
+                              <select class="form-control" name="type" id="">
+                                 <option value="admin">Admin</option>
+                                 <option value="creator">Creator</option>
+                              </select>
+                           </div>
+                           <div class="form-group">
                               <label>Image:</label>
                               <input type="file" class="form-control" id="image" placeholder="Enter image"  name="image" required >
                            </div>
@@ -50,7 +57,7 @@
                          echo '<table class="table"><tr>
                                      <th>Id</th>
                                      <th>Username</th>
-                                     <th>Email</th>
+                                     <th>Password</th>
                                      <th>Type</th>
                                      <th>Image</th>
                                      <th>Action</th>
@@ -59,7 +66,7 @@
                              echo "<tr>".
                                      "<td>".$row["id"]."</td>".
                                      "<td>".$row["username"]."</td>".
-                                     "<td>".$row["email"]."</td>".
+                                     "<td>".$row["password"]."</td>".
                                      "<td>".$row["type"]."</td>".
                                      '<td><img style="height:40px" src="uploads/'.$row["image"].'"></td>'.
                                      '<td style="width:20%"> <button name="btn_update" class="btn btn-success btn_select" data-id="'.$row["id"].'"  data-image="'.$row["image"].'"  data-name="'.$row["username"].'" data-password="'.$row["password"].'">Edit</button>  <button  data-toggle="modal" data-target="#deletModal" class=" btn btn-delete btn-danger"  data-id ="'.$row['id'].'">Delete</button></td>'.
