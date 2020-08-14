@@ -1,5 +1,5 @@
 
-<footer class="footer text-right">
+<footer class="footer ">
    2020 © Developed by Chhai.
 </footer>
 <script>
