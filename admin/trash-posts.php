@@ -50,8 +50,6 @@ if (strlen($_SESSION['login']) == 0) {
                 <!-- Start content -->
                 <div class="content">
                     <div class="container">
-
-
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="page-title-box">
@@ -82,6 +80,7 @@ if (strlen($_SESSION['login']) == 0) {
                             <div class="col-sm-12">
                                 <div class="col-sm-12">
                                     <div class="card-box">
+                                        <input name="search_key"  id="search_key" style="height: 32px;" placeholder="Search ..."/> <button type="submit" id="search_btn" class="btn btn-primary">Search </button>
                                         <div class="table-responsive">
                                             <table class="table">
                                                 <thead>
@@ -92,7 +91,7 @@ if (strlen($_SESSION['login']) == 0) {
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
+                                                <tbody id="search_result">
                                                     <?php
                                                     $query = mysqli_query($con, "select tblposts.id as postid,tblposts.PostTitle as title,tblcategory.CategoryName as category,tblsubcategory.Subcategory as subcategory from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId left join tblsubcategory on tblsubcategory.SubCategoryId=tblposts.SubCategoryId where tblposts.Is_Active=0");
                                                     $rowcount = mysqli_num_rows($query);
@@ -133,6 +132,18 @@ if (strlen($_SESSION['login']) == 0) {
                     <?php include('includes/footer.php'); ?>
                 </div>
             </div>
+    <script>
+        $('#search_btn').click(function(){
+            $.ajax({
+                type: "POST",
+                url: "get-search-result-trash.php",
+                data:'search='+$('#search_key').val(),
+                success: function(data){
+                    $("#search_result").html(data);
+                }
+            });
+        })
+    </script>
     </body>
 
     </html>
