@@ -138,7 +138,7 @@ else{
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row">
+                                                <div class="row" style="margin-bottom:10px;">
                                                     <div class="col-sm-12">
                                                         <div class="card-box">
                                                             <h4 class="m-b-30 m-t-0 header-title"><b>Feature Image</b></h4>

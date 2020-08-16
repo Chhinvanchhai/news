@@ -1,5 +1,5 @@
-
-<footer class="footer ">
+<div style="height: 40px;"> </div>
+<footer class="footer" >
    2020 © Developed by Chhai.
 </footer>
 <script>
