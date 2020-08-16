@@ -31,8 +31,6 @@ if (strlen($_SESSION['login']) == 0) {
                 <!-- Start content -->
                 <div class="content">
                     <div class="container">
-
-
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="page-title-box">
@@ -56,6 +54,7 @@ if (strlen($_SESSION['login']) == 0) {
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="card-box">
+                                    <input name="search_key"  id="search_key" style="height: 32px;" placeholder="Search ..."/> <button type="submit" id="search_btn" class="btn btn-primary">Search </button>
                                     <div class="table-responsive">
                                         <table class="table table-colored table-centered table-inverse m-0">
                                             <thead>
@@ -66,39 +65,40 @@ if (strlen($_SESSION['login']) == 0) {
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            <?php
+                                                if(!isset($_REQUEST['search_key'])){
+                                            ?>
+                                                  <tbody id="search_result">
+                                                    <?php
+                                                    $query = mysqli_query($con, "select tblposts.id as postid,tblposts.PostTitle as title,tblcategory.CategoryName as category,tblsubcategory.Subcategory as subcategory from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId left join tblsubcategory on tblsubcategory.SubCategoryId=tblposts.SubCategoryId where tblposts.Is_Active=1 ");
+                                                    $rowcount = mysqli_num_rows($query);
+                                                    if ($rowcount == 0) {
+                                                    ?>
+                                                        <tr>
+                                                            <td colspan="4" align="center">
+                                                                <h3 style="color:red">No record found</h3>
+                                                            </td>
+                                                        <tr>
+                                                            <?php
+                                                        } else {
+                                                            while ($row = mysqli_fetch_array($query)) {
+                                                            ?>
+                                                        <tr>
+                                                            <td><b><?php echo htmlentities($row['title']); ?></b></td>
+                                                            <td><?php echo htmlentities($row['category']) ?></td>
+                                                            <td><?php echo htmlentities($row['subcategory']) ?></td>
 
-                                                <?php
-                                                $query = mysqli_query($con, "select tblposts.id as postid,tblposts.PostTitle as title,tblcategory.CategoryName as category,tblsubcategory.Subcategory as subcategory from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId left join tblsubcategory on tblsubcategory.SubCategoryId=tblposts.SubCategoryId where tblposts.Is_Active=1 ");
-                                                $rowcount = mysqli_num_rows($query);
-                                                if ($rowcount == 0) {
-                                                ?>
-                                                    <tr>
-
-                                                        <td colspan="4" align="center">
-                                                            <h3 style="color:red">No record found</h3>
-                                                        </td>
-                                                    <tr>
-                                                        <?php
-                                                    } else {
-                                                        while ($row = mysqli_fetch_array($query)) {
-                                                        ?>
-                                                    <tr>
-                                                        <td><b><?php echo htmlentities($row['title']); ?></b></td>
-                                                        <td><?php echo htmlentities($row['category']) ?></td>
-                                                        <td><?php echo htmlentities($row['subcategory']) ?></td>
-
-                                                        <td>    
-                                                            <a target="_blank" href="/news/news-details.php?nid=<?php echo htmlentities($row['postid']); ?>">view</a>
-                                                            <a href="edit-post.php?pid=<?php echo htmlentities($row['postid']); ?>"><i class="fa fa-pencil" style="color: #29b6f6;"></i></a>
-                                                            &nbsp;
-                                                            <a href="manage-posts.php?pid=<?php echo htmlentities($row['postid']); ?>&&action=del" onclick="return confirm('Do you reaaly want to delete ?')"><i class="fa fa-trash-o" style="color: #f05050"></i></a>
-                                                         </td>
-                                                    </tr>
-                                            <?php }
-                                                    } ?>
-
-                                            </tbody>
+                                                            <td>    
+                                                                <a target="_blank" href="/news/news-details.php?nid=<?php echo htmlentities($row['postid']); ?>">view</a>
+                                                                <a href="edit-post.php?pid=<?php echo htmlentities($row['postid']); ?>"><i class="fa fa-pencil" style="color: #29b6f6;"></i></a>
+                                                                &nbsp;
+                                                                <a href="manage-posts.php?pid=<?php echo htmlentities($row['postid']); ?>&&action=del" onclick="return confirm('Do you reaaly want to delete ?')"><i class="fa fa-trash-o" style="color: #f05050"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                    <?php }
+                                                        } ?>
+                                                    </tbody>
+                                            <?php } ?>
                                         </table>
                                     </div>
                                 </div>
@@ -106,12 +106,22 @@ if (strlen($_SESSION['login']) == 0) {
                         </div>
                     </div> <!-- container -->
                 </div> <!-- content -->
-
                 <?php include('includes/footer.php'); ?>
-
             </div>
         </div>
         <!-- END wrapper -->
+    <script>
+        $('#search_btn').click(function(){
+            $.ajax({
+                type: "POST",
+                url: "get-search-result.php",
+                data:'search='+$('#search_key').val(),
+                success: function(data){
+                    $("#search_result").html(data);
+                }
+            });
+        })
+    </script>
     </body>
 
     </html>

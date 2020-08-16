@@ -83,7 +83,7 @@
 			   		<div id="main">
 						<li class="right-side-toggle">
 							<!-- <a class="nav-link  waves-effect waves-light" href="javascript:void(0)"><i class="ti-settings"></i></a> -->
-							<a onclick="openNav()" style="margin-top: 10px; position:relative" class="nav-link waves-effect waves-light" href="javascript:void(0)"><i style="font-size: 40px;" class="ti-bell"></i><span style="font-size: 9px; position: absolute; top: 0px; left: 30px; background: red; padding: 5px; color: white; border-radius: 13px;" class="counter counter-lg"><?php echo $total; ?></span>&nbsp;&nbsp; </a>
+							<a onclick="openNav()" style="margin-top: 10px; position:relative" class="nav-link waves-effect waves-light" href="javascript:void(0)"><i style="font-size: 30px;" class="ti-bell"></i><span style="font-size: 9px; position: absolute; top: 0px; left: 30px; background: red; padding: 5px; color: white; border-radius: 13px;" class="counter counter-lg"><?php echo $total; ?></span>&nbsp;&nbsp; </a>
 						</li>
 						
 							<div id="mySidebar" class="sidebar" style="padding-top: 0px;">
