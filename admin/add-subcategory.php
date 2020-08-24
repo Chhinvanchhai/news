@@ -116,7 +116,7 @@
                                     <div class="form-group">
                                        <label class="col-md-2 control-label">&nbsp;</label>
                                        <div class="col-md-10" style="padding-left: 150px;">
-                                          <button type="submit" class="btn btn-custom waves-effect waves-light btn-md" name="submitsubcat">
+                                          <button type="submit" class="btn btn-success waves-effect waves-light btn-md" name="submitsubcat">
                                           Submit
                                           </button>
                                        </div>

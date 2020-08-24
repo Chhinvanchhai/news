@@ -46,7 +46,7 @@ $error="Something went wrong . Please try again.";
             <div class="content-page">
                 <!-- Start content -->
                 <div class="content">
-                    <div class="container">
+                    <div class="container" style="width: 100%;">
 
 
                         <div class="row">

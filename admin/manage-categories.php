@@ -84,7 +84,7 @@
                   <div class="row" style="width: 100%; margin: 0 auto;">
                      <div class="col-md-12">
                         <div class="demo-box m-t-20">
-                           <div class="m-b-30">
+                           <div class="m-b-30" style="padding-top: 10px;">
                               <a href="add-category.php">
                               <button id="addToTable" class="btn btn-success waves-effect waves-light">Add <i class="mdi mdi-plus-circle-outline" ></i></button>
                               </a>
@@ -132,7 +132,7 @@
                      <div class="col-md-12">
                         <div class="demo-box m-t-20">
                            <div class="m-b-30">
-                              <h4><i class="ti-trash" ></i> Deleted Categories</h4>
+                              <h4><i class="ti-trash"  style="padding: 0px 20px; font-size: 20px;" ></i> Deleted Categories</h4>
                            </div>
                            <div class="table-responsive">
                               <table class="table m-0 table-colored-bordered table-bordered-danger">

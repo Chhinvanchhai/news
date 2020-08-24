@@ -84,7 +84,7 @@
                   <div class="row" style="width: 100%; margin: 0 auto;">
                      <div class="col-md-12">
                         <div class="demo-box m-t-20">
-                           <div class="m-b-30">
+                           <div class="m-b-30" style="padding-top: 10px;">
                               <a href="add-subcategory.php">
                               <button id="addToTable" class="btn btn-success waves-effect waves-light">Add <i class="mdi mdi-plus-circle-outline" ></i></button>
                               </a>
@@ -129,7 +129,7 @@
                                        <td><?php echo htmlentities($row['subcatpostingdate']);?></td>
                                        <td><?php echo htmlentities($row['subcatupdationdate']);?></td>
                                        <td><a href="edit-subcategory.php?scid=<?php echo htmlentities($row['subcatid']);?>"><i class="fa fa-pencil" style="color: #29b6f6;"></i></a> 
-                                          &nbsp;<a href="manage-subcategories.php?scid=<?php echo htmlentities($row['subcatid']);?>&&action=del"> <i class="fa fa-trash-o" style="color: #f05050"></i></a> 
+                                          &nbsp;<a href="manage-subcategories.php?scid=<?php echo htmlentities($row['subcatid']);?>&&action=del"> <i class="fa fa-trash-o" style="color: #f05050;" ></i></a> 
                                        </td>
                                     </tr>
                                     <?php
@@ -146,7 +146,7 @@
                      <div class="col-md-12">
                         <div class="demo-box m-t-20">
                            <div class="m-b-30">
-                              <h4><i class="fa fa-trash-o" ></i> Deleted SubCategories</h4>
+                              <h4><i class="fa fa-trash-o" style="padding: 0px 20px; font-size: 20px;" ></i> Deleted SubCategories</h4>
                            </div>
                            <div class="table-responsive">
                               <table class="table m-0 table-colored-bordered table-bordered-danger">

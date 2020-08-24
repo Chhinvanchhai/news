@@ -44,7 +44,7 @@ if (strlen($_SESSION['login']) == 0) {
             <div class="content-page">
                 <!-- Start content -->
                 <div class="content">
-                    <div class="container">
+                    <div class="container" style="width: 100%;">
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="page-title-box">
@@ -79,7 +79,7 @@ if (strlen($_SESSION['login']) == 0) {
                                         <strong>Oh snap!</strong> <?php echo htmlentities($delmsg); ?></div>
                                 <?php } ?>
                             </div>
-                            <div class="row">
+                            <div class="row"  style="margin: 0 auto;">
                                 <div class="col-md-12">
                                     <div class="demo-box m-t-20">
 
