@@ -43,21 +43,26 @@
                     $query=mysqli_query($con,"select tblposts.id as pid,tblposts.PostTitle as posttitle,tblposts.PostImage,tblcategory.CategoryName as category,tblcategory.id as cid,tblsubcategory.Subcategory as subcategory,tblposts.PostDetails as postdetails,tblposts.PostingDate as postingdate,tblposts.PostUrl as url from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId left join  tblsubcategory on  tblsubcategory.SubCategoryId=tblposts.SubCategoryId where tblposts.Is_Active=1 order by tblposts.id desc  LIMIT $offset, $no_of_records_per_page");
                     while ($row=mysqli_fetch_array($query)) {
                     ?>
-                <div class="col-md-6 col-xs-12">
-                  <a href="news-details.php?nid=<?php echo htmlentities($row['pid'])?>">
-                    <div class="card mb-4">
-                        <img class="card-img-top" style="height: 200px;" src="admin/postimages/<?php echo htmlentities($row['PostImage']);?>" alt="<?php echo htmlentities($row['posttitle']);?>">
-                        <div class="card-body">
-                          <h4 class="card-title"><?php echo htmlentities($row['posttitle']);?></h4>
-                          <p><b>Category : </b> <a href="category.php?catid=<?php echo htmlentities($row['cid'])?>"><?php echo htmlentities($row['category']);?></a> </p>
-                          <p></p>
+                  <div class="col-md-12 col-xs-12">
+                        <div class="row" style="margin-bottom:30px; box-shawdow:'1px 0px 1px solid #808080';">
+                              <div class="col-sm-4 col-xs-12">
+                                 <img class="card-img-top" style="height: 200px; " src="admin/postimages/<?php echo htmlentities($row['PostImage']);?>" alt="<?php echo htmlentities($row['posttitle']);?>">
+                              </div>
+                              <div class="col-sm-8 col-xs-12">
+                                 <a href="news-details.php?nid=<?php echo htmlentities($row['pid'])?>">
+                                    <h4 class="card-title"><?php echo htmlentities($row['posttitle']);?></h4>
+                                 </a>
+                                 <p>
+                                    <?php
+                                          echo $row['postDetais'];
+                                     ?>
+                                 </p>
+                                 <p><b>Category : </b> <a href="category.php?catid=<?php echo htmlentities($row['cid'])?>"><?php echo htmlentities($row['category']);?></a> </p>
+                             
+                                 Posted on <?php echo htmlentities($row['postingdate']);?>
+                              </div>
                         </div>
-                        <div class="card-footer text-muted">
-                          Posted on <?php echo htmlentities($row['postingdate']);?>
-                        </div>
-                    </div>
-                  </a>
-                </div>
+                  </div>
                 <?php } ?>
                </div>
                <!-- Pagination -->

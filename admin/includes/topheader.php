@@ -14,7 +14,7 @@
    <div class="topbar" style="background-color: #ffffff !important; height:70px;">
       <!-- LOGO -->
             <div class="topbar-left">
-                <a href="index.html" class="logo"><span>NEWS<span>Top</span></span><i class="mdi mdi-layers"></i></a>
+                <a href="/news/index.php" class="logo"><span>NEWS<span></span></span><i class="mdi mdi-layers"></i></a>
                 <!-- Image logo -->
                 <a href="index.html" class="logo">
                     <span>
