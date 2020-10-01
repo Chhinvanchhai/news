@@ -2,7 +2,7 @@
       <div class="container">
         <a class="navbar-brand" href="index.php">
           <!-- <img src="images/logo.png" height="50"> -->
-          <h1>New</h1>
+          <h1>News</h1>
         </a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>

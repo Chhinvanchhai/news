@@ -51,7 +51,7 @@
                <!-- Blog Post -->
                <?php
                   $pid=intval($_GET['nid']);
-                   $query=mysqli_query($con,"select tblposts.PostTitle as posttitle,tblposts.PostImage,tblcategory.CategoryName as category,tblcategory.id as cid,tblsubcategory.Subcategory as subcategory,tblposts.PostDetails as postdetails,tblposts.PostingDate as postingdate,tblposts.PostUrl as url from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId left join  tblsubcategory on  tblsubcategory.SubCategoryId=tblposts.SubCategoryId where tblposts.id='$pid'");
+                   $query=mysqli_query($con,"select tblposts.PostTitle as posttitle,tblposts.PostImage,tblposts.featureText,tblcategory.CategoryName as category,tblcategory.id as cid,tblsubcategory.Subcategory as subcategory,tblposts.PostDetails as postdetails,tblposts.PostingDate as postingdate,tblposts.PostUrl as url from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId left join  tblsubcategory on  tblsubcategory.SubCategoryId=tblposts.SubCategoryId where tblposts.id='$pid'");
                   while ($row=mysqli_fetch_array($query)) {
                   ?>
                <div class="card mb-4">
@@ -62,6 +62,7 @@
                      </p>
                      <hr />
                      <img class="img-fluid rounded" src="admin/postimages/<?php echo htmlentities($row['PostImage']);?>" alt="<?php echo htmlentities($row['posttitle']);?>">
+                     <p class="card-title"><?php echo htmlentities($row['featureText']);?></p>
                      <p class="card-text"><?php 
                         $pt=$row['postdetails'];
                         echo  (substr($pt,0));?></p>

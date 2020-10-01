@@ -40,7 +40,7 @@
                       $total_pages = ceil($total_rows / $no_of_records_per_page);
                     
                     
-                    $query=mysqli_query($con,"select tblposts.id as pid,tblposts.PostTitle as posttitle,tblposts.PostImage,tblcategory.CategoryName as category,tblcategory.id as cid,tblsubcategory.Subcategory as subcategory,tblposts.PostDetails as postdetails,tblposts.PostingDate as postingdate,tblposts.PostUrl as url from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId left join  tblsubcategory on  tblsubcategory.SubCategoryId=tblposts.SubCategoryId where tblposts.Is_Active=1 order by tblposts.id desc  LIMIT $offset, $no_of_records_per_page");
+                    $query=mysqli_query($con,"select tblposts.id as pid,tblposts.PostTitle as posttitle,tblposts.PostImage,tblcategory.CategoryName as category,tblcategory.id as cid,tblsubcategory.Subcategory as subcategory,tblposts.featureText as featureText,tblposts.PostingDate as postingdate,tblposts.PostUrl as url from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId left join  tblsubcategory on  tblsubcategory.SubCategoryId=tblposts.SubCategoryId where tblposts.Is_Active=1 order by tblposts.id desc  LIMIT $offset, $no_of_records_per_page");
                     while ($row=mysqli_fetch_array($query)) {
                     ?>
                   <div class="col-md-12 col-xs-12">
@@ -53,13 +53,10 @@
                                     <h4 class="card-title"><?php echo htmlentities($row['posttitle']);?></h4>
                                  </a>
                                  <p>
-                                    <?php
-                                          echo $row['postDetais'];
-                                     ?>
+                                    <?php echo substr($row['featureText'],0, 190). "..."; ?>
                                  </p>
-                                 <p><b>Category : </b> <a href="category.php?catid=<?php echo htmlentities($row['cid'])?>"><?php echo htmlentities($row['category']);?></a> </p>
-                             
-                                 Posted on <?php echo htmlentities($row['postingdate']);?>
+                                 <p class="mb-0">Category :  <a href="category.php?catid=<?php echo htmlentities($row['cid'])?>"><?php echo htmlentities($row['category']);?></a> </p>
+                                  <p>Posted on <?php echo htmlentities($row['postingdate']);?></p>
                               </div>
                         </div>
                   </div>

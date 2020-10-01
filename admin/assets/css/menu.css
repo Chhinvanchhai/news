@@ -542,7 +542,7 @@ body.fixed-left .side-menu.left {
 .page-title-box {
   padding: 20px;
   border-bottom: 1px solid #eee;
-  margin: 0 -20px 20px -20px;
+  margin: 0 -20px 0px -20px;
 }
 .page-title-box .page-title {
   margin-bottom: 0;

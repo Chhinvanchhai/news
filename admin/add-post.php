@@ -18,6 +18,7 @@ else{
         $arr = explode(" ",$posttitle);
         $url=implode("-",$arr);
         $imgfile=$_FILES["postimage"]["name"];
+        $featureText = $_POST['featureText'];
         // get the image extension
         $extension = substr($imgfile,strlen($imgfile)-4,strlen($imgfile));
         // allowed extensions
@@ -34,7 +35,7 @@ else{
             // Code for move image into directory
             move_uploaded_file($_FILES["postimage"]["tmp_name"],"postimages/".$imgnewfile);
             $status=1;
-            $query=mysqli_query($con,"insert into tblposts(PostTitle,CategoryId,SubCategoryId,PostDetails,PostUrl,Is_Active,PostImage) values('$posttitle','$catid','$subcatid','$postdetails','$url','$status','$imgnewfile')");
+            $query=mysqli_query($con,"insert into tblposts(PostTitle,CategoryId,SubCategoryId,PostDetails,PostUrl,Is_Active,PostImage,featureText) values('$posttitle','$catid','$subcatid','$postdetails','$url','$status','$imgnewfile','$featureText')");
             if($query){
                 $msg="Post successfully added ";
             }
@@ -102,7 +103,7 @@ else{
                                     <?php } ?>
                                 </div>
                             </div>
-                            <div class="row"  style="background-color: #e6e6e6;">
+                            <div class="row"  style="background-color: #e6e6e6; padding-top:20px;">
                                 <div class="col-md-10 col-md-offset-1" style="background-color: #ffffff;">
                                     <div class="p-6">
                                         <div class="">
@@ -129,6 +130,14 @@ else{
                                                     <label for="exampleInputEmail1">Sub Category</label>
                                                     <select class="form-control" name="subcategory" id="subcategory" required>
                                                     </select> 
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="card-box">
+                                                            <h4 class="m-b-30 m-t-0 header-title"><b>Features Text</b></h4>
+                                                            <textarea class="form-control"  name="featureText" required></textarea>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-sm-12">

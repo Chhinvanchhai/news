@@ -1,6 +1,6 @@
 <div style="height: 40px;"> </div>
 <footer class="footer" >
-   2020 © Developed by Chhai.
+   2020 © Developed by Group.
 </footer>
 <script>
    var resizefunc = [];

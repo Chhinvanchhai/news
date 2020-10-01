@@ -10,11 +10,12 @@ if (strlen($_SESSION['login']) == 0) {
         $catid = $_POST['category'];
         $subcatid = $_POST['subcategory'];
         $postdetails = $_POST['postdescription'];
+        $featureText = $_POST['featureText'];
         $arr = explode(" ", $posttitle);
         $url = implode("-", $arr);
         $status = 1;
         $postid = intval($_GET['pid']);
-        $query = mysqli_query($con, "update tblposts set PostTitle='$posttitle',CategoryId='$catid',SubCategoryId='$subcatid',PostDetails='$postdetails',PostUrl='$url',Is_Active='$status' where id='$postid'");
+        $query = mysqli_query($con, "update tblposts set PostTitle='$posttitle',CategoryId='$catid',SubCategoryId='$subcatid',PostDetails='$postdetails',PostUrl='$url',Is_Active='$status',featureText='$featureText' where id='$postid'");
         if ($query) {
             $msg = "Post updated ";
         } else {
@@ -88,7 +89,7 @@ if (strlen($_SESSION['login']) == 0) {
                         </div>
                         <?php
                         $postid = intval($_GET['pid']);
-                        $query = mysqli_query($con, "select tblposts.id as postid,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid,tblsubcategory.SubCategoryId as subcatid,tblsubcategory.Subcategory as subcategory from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId left join tblsubcategory on tblsubcategory.SubCategoryId=tblposts.SubCategoryId where tblposts.id='$postid' and tblposts.Is_Active=1 ");
+                        $query = mysqli_query($con, "select tblposts.id as postid,tblposts.featureText as featureText,tblposts.PostImage,tblposts.PostTitle as title,tblposts.PostDetails,tblcategory.CategoryName as category,tblcategory.id as catid,tblsubcategory.SubCategoryId as subcatid,tblsubcategory.Subcategory as subcategory from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId left join tblsubcategory on tblsubcategory.SubCategoryId=tblposts.SubCategoryId where tblposts.id='$postid' and tblposts.Is_Active=1 ");
                         while ($row = mysqli_fetch_array($query)) {
                         ?>
                             <div class="row">
@@ -124,7 +125,14 @@ if (strlen($_SESSION['login']) == 0) {
                                                         <option value="<?php echo htmlentities($row['subcatid']); ?>"><?php echo htmlentities($row['subcategory']); ?></option>
                                                     </select>
                                                 </div>
-
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="card-box">
+                                                            <h4 class="m-b-30 m-t-0 header-title"><b>Features Text</b></h4>
+                                                            <textarea class="form-control"  name="featureText"  required><?php echo htmlentities($row['featureText']); ?></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
                                                 <div class="row">
                                                     <div class="col-sm-12">
