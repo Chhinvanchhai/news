@@ -59,7 +59,7 @@ include('includes/config.php');
 
   <!-- Footer -->
   <?php include('includes/footer.php'); ?>
-
+  <h1>Text confict </h1>
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
