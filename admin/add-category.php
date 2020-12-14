@@ -93,7 +93,7 @@
                                     <!---Error Message--->
                                     <?php if($error){ ?>
                                     <div class="alert alert-danger" role="alert">
-                                       <strong>Oh snap!</strong>
+                                       <strong>Oh !</strong>
                                        <?php echo htmlentities($error);?>
                                     </div>
                                     <?php } ?>

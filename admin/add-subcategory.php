@@ -77,7 +77,7 @@
                                  <!---Error Message--->
                                  <?php if($error){ ?>
                                  <div class="alert alert-danger" role="alert">
-                                    <strong>Oh snap!</strong> <?php echo htmlentities($error);?>
+                                    <strong>Oh !</strong> <?php echo htmlentities($error);?>
                                  </div>
                                  <?php } ?>
                               </div>

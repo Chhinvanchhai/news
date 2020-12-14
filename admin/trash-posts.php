@@ -74,7 +74,7 @@ if (strlen($_SESSION['login']) == 0) {
                             <div class="col-sm-12">
                                 <?php if ($delmsg) { ?>
                                     <div class="alert alert-danger" role="alert">
-                                        <strong>Oh snap!</strong> <?php echo htmlentities($delmsg); ?></div>
+                                        <strong>Oh !</strong> <?php echo htmlentities($delmsg); ?></div>
                                 <?php } ?>
                             </div>
                             <div class="col-sm-12">

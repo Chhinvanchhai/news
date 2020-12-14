@@ -80,7 +80,7 @@ $error="Something went wrong . Please try again.";
 <!---Error Message--->
 <?php if($error){ ?>
 <div class="alert alert-danger" role="alert">
-<strong>Oh snap!</strong> <?php echo htmlentities($error);?></div>
+<strong>Oh !</strong> <?php echo htmlentities($error);?></div>
 <?php } ?>
 
 

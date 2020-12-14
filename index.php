@@ -74,6 +74,8 @@
                   <li class="page-item"><a href="?pageno=<?php echo $total_pages; ?>" class="page-link">Last</a></li>
                </ul>
             </div>
+               <!-- Chane my Chhai -->
+               <h3>Learn git config</h3>
             <!-- Sidebar Widgets Column -->
             <?php include('includes/sidebar.php');?>
          </div>
@@ -87,4 +89,6 @@
       <script src="js/bootstrap.min.js"></script>
       </head>
    </body>
+
+   
 </html>

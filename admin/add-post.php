@@ -35,7 +35,8 @@ else{
             // Code for move image into directory
             move_uploaded_file($_FILES["postimage"]["tmp_name"],"postimages/".$imgnewfile);
             $status=1;
-            $query=mysqli_query($con,"insert into tblposts(PostTitle,CategoryId,SubCategoryId,PostDetails,PostUrl,Is_Active,PostImage,featureText) values('$posttitle','$catid','$subcatid','$postdetails','$url','$status','$imgnewfile','$featureText')");
+            $sql_post = "insert into tblposts(PostTitle,CategoryId,SubCategoryId,PostDetails,PostUrl,Is_Active,PostImage,featureText) values('$posttitle','$catid','$subcatid','$postdetails','$url','$status','$imgnewfile','$featureText')";
+            $query=mysqli_query($con,$sql_post);
             if($query){
                 $msg="Post successfully added ";
             }
@@ -99,7 +100,11 @@ else{
                                     <!---Error Message--->
                                     <?php if($error){ ?>
                                         <div class="alert alert-danger" role="alert">
-                                        <strong>Oh snap!</strong> <?php echo htmlentities($error);?></div>
+                                        <?php echo htmlentities($error);
+                                         var_dump($sql_post);
+                                        
+                                        ?></div>
+
                                     <?php } ?>
                                 </div>
                             </div>

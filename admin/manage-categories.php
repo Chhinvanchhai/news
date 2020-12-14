@@ -77,7 +77,7 @@
                      <?php } ?>
                      <?php if($delmsg){ ?>
                      <div class="alert alert-danger" role="alert">
-                        <strong>Oh snap!</strong> <?php echo htmlentities($delmsg);?>
+                        <strong>Oh !</strong> <?php echo htmlentities($delmsg);?>
                      </div>
                      <?php } ?>
                   </div>
