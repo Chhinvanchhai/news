@@ -56,7 +56,7 @@ include('includes/config.php');
 
   </div>
   <!-- /.container -->
-
+  <h2>Conflict </h2>
   <!-- Footer -->
   <?php include('includes/footer.php'); ?>
   <h1>Text confict </h1>
