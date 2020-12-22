@@ -80,7 +80,11 @@
                <h3>Update by persone ABC</h3>
                <h3>Update by me vanchhai 32</h3>
                 <h3>Update by persone ABC 23</h3>
+<<<<<<< HEAD
                 <h3>aaaaaaaaaaaaaaaaaaa</h3>
+=======
+              <h3>New update </h3>
+>>>>>>> ce74965fd2295e931c9331a4159a1cf6ab68205e
             <!-- Sidebar Widgets Column -->
             <?php include('includes/sidebar.php');?>
          </div>
