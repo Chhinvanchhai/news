@@ -80,6 +80,7 @@
                <h3>Update by persone ABC</h3>
                <h3>Update by me vanchhai 32</h3>
                 <h3>Update by persone ABC 23</h3>
+              <h3>New update </h3>
             <!-- Sidebar Widgets Column -->
             <?php include('includes/sidebar.php');?>
          </div>
