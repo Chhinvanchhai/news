@@ -74,12 +74,9 @@
                   <li class="page-item"><a href="?pageno=<?php echo $total_pages; ?>" class="page-link">Last</a></li>
                </ul>
             </div>
-               <!-- Chane my Chhai --> <h1> New Update by me</h1> <h1> New Update by me</h1>
-             <h1> New Update by me</h1>
-               <h1> New Update by me</h1>
-             <h1> New Update by me</h1>
-             <h1> New Update by me</h1> <h1> New Update by me</h1> <h1> New Update by me</h1>
-             <h1> New Update e</h1>
+               <!-- Chane my Chhai --> 
+            
+      
          
             <!-- Sidebar Widgets Column -->
             <?php include('includes/sidebar.php');?>
