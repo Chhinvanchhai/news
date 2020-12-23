@@ -80,6 +80,8 @@
              <h1> New Update by me</h1>
              <h1> New Update by me</h1> <h1> New Update by me</h1> <h1> New Update by me</h1>
              <h1> New Update e</h1>
+             <!-- My new post -->
+             <h1>This best of my </h1>
          
             <!-- Sidebar Widgets Column -->
             <?php include('includes/sidebar.php');?>
